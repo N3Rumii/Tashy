@@ -1,0 +1,106 @@
+/* ──────────────────────────────────────────────────
+   App-level theme variables
+   Uses Mantine's primary-color shades directly —
+   no color-mix(), works in all WebViews.
+   ────────────────────────────────────────────────── */
+
+/* ─── Base (fallback for both light and dark) ─── */
+:root {
+  --app-border: var(--mantine-color-default-border);
+  --app-border-light: var(--mantine-color-default-border);
+  --app-surface: var(--mantine-color-default);
+  --app-surface-raised: var(--mantine-color-default-hover);
+  --app-overlay: #000000;
+  --app-hover: var(--mantine-color-default-hover);
+}
+
+/* ─── Dark mode — dark surfaces, tinted borders ─── */
+:root[data-mantine-color-scheme="dark"] {
+  --app-border:        var(--mantine-primary-color-8);
+  --app-border-light:  var(--mantine-primary-color-9);
+  --app-surface:       var(--mantine-color-dark-7);
+  --app-surface-raised:var(--mantine-color-dark-6);
+  --app-overlay:       #000000;
+  --app-hover:         var(--mantine-color-dark-5);
+}
+
+/* ─── Light mode — white surfaces, light borders ─── */
+:root[data-mantine-color-scheme="light"] {
+  --app-border:        var(--mantine-primary-color-3);
+  --app-border-light:  var(--mantine-primary-color-2);
+  --app-surface:       var(--mantine-color-white);
+  --app-surface-raised:var(--mantine-color-gray-0);
+  --app-overlay:       #000000;
+  --app-hover:         var(--mantine-color-gray-1);
+}
+
+/* ─── AMOLED (truly black backgrounds, high-contrast text/icons) ─── */
+:root[data-mantine-color-scheme="dark"][data-color-scheme="amoled"] {
+  /* Mantine dark palette — 0=lightest(text), 9=darkest(bg) */
+  --mantine-color-dark-9:      #000000;
+  --mantine-color-dark-8:      #010101;
+  --mantine-color-dark-7:      #030303;
+  --mantine-color-dark-6:      #060606;
+  --mantine-color-dark-5:      #0a0a0a;
+  --mantine-color-dark-4:      #0f0f0f;
+  --mantine-color-dark-3:      #181818;
+  --mantine-color-dark-2:      #808080;
+  --mantine-color-dark-1:      #b0b0b0;
+  --mantine-color-dark-0:      #d8d8d8;
+  --mantine-color-dark:        #000000;
+
+  /* Body */
+  --mantine-color-body:        #000000;
+
+  /* Surfaces */
+  --mantine-color-default:           #010101;
+  --mantine-color-default-hover:     #080808;
+  --mantine-color-default-border:    #141414;
+  --mantine-color-default-color:     #e0e0e0;
+
+  /* Component variants */
+  --mantine-color-dark-filled:       #010101;
+  --mantine-color-dark-filled-hover: #080808;
+  --mantine-color-dark-light:        #080808;
+  --mantine-color-dark-light-hover:  #0e0e0e;
+  --mantine-color-dark-light-color:  #d0d0d0;
+  --mantine-color-dark-outline:      #1a1a1a;
+  --mantine-color-dark-outline-hover:#252525;
+
+  /* App-specific */
+  --app-border:        var(--mantine-primary-color-9);
+  --app-border-light:  var(--mantine-primary-color-8);
+  --app-surface:       #010101;
+  --app-surface-raised:#080808;
+  --app-overlay:       #000000;
+  --app-hover:         #0c0c0c;
+}
+
+/* ──────────────────────────────────────────────────
+   Theme-colored scrollbars
+   ────────────────────────────────────────────────── */
+
+/* Firefox */
+* {
+  scrollbar-color: var(--mantine-primary-color-6) transparent;
+  scrollbar-width: thin;
+}
+
+/* WebKit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--mantine-primary-color-6);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mantine-primary-color-5);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
