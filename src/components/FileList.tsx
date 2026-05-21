@@ -1332,7 +1332,7 @@ export default function FileList({
           </Text>
         </Box>
 
-        <Box data-icon-version={iconLoadKey} style={{ flex: 1 }} onContextMenu={handleBgContextMenu}>
+        <Box data-icon-version={iconLoadKey} style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }} onContextMenu={handleBgContextMenu}>
           {loading ? (
             <Center h="100%"><Loader size="md" /></Center>
           ) : error ? (
